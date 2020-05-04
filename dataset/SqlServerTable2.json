@@ -1,0 +1,126 @@
+{
+	"name": "SqlServerTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "ROW_UNO",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLNT_NUMERC",
+				"type": "varchar"
+			},
+			{
+				"name": "CLNT_LENGTH",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLNT_MIN_LEN",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MAT_UNIQUE",
+				"type": "varchar"
+			},
+			{
+				"name": "MAT_NUMERC",
+				"type": "varchar"
+			},
+			{
+				"name": "MAT_LENGTH",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MAT_MIN_LEN",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NAME_FORMAT",
+				"type": "varchar"
+			},
+			{
+				"name": "FIRM_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "GEN_CLNT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "GEN_MATT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "FULL_TEXT_MODE",
+				"type": "varchar"
+			},
+			{
+				"name": "FULL_TEXT_DIR",
+				"type": "varchar"
+			},
+			{
+				"name": "USE_ADDR_CODES",
+				"type": "varchar"
+			},
+			{
+				"name": "SYSTEM_CURRENCY",
+				"type": "char"
+			},
+			{
+				"name": "MULTI_CLNT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "MULTI_VEND_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "MULTI_PERS_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PARENT_CHILD",
+				"type": "varchar"
+			},
+			{
+				"name": "AUTO_GEN_CHILD",
+				"type": "varchar"
+			},
+			{
+				"name": "CHILD_MAT_SEP",
+				"type": "varchar"
+			},
+			{
+				"name": "LEN_CHILD_SUFF",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LAST_MODIFIED",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LANGUAGE_CODE",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "HBM_PARMS2"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

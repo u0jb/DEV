@@ -1,0 +1,327 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Web1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "SqlServerSink"
+					},
+					"enableStaging": false,
+					"parallelCopies": 1,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ROW_UNO",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ROW_UNO",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CLNT_NUMERC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLNT_NUMERC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLNT_LENGTH",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CLNT_LENGTH",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CLNT_MIN_LEN",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CLNT_MIN_LEN",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MAT_UNIQUE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MAT_UNIQUE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MAT_NUMERC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MAT_NUMERC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MAT_LENGTH",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MAT_LENGTH",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MAT_MIN_LEN",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MAT_MIN_LEN",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "NAME_FORMAT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NAME_FORMAT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIRM_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FIRM_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GEN_CLNT_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GEN_CLNT_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GEN_MATT_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "GEN_MATT_CODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FULL_TEXT_MODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FULL_TEXT_MODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FULL_TEXT_DIR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FULL_TEXT_DIR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "USE_ADDR_CODES",
+									"type": "String"
+								},
+								"sink": {
+									"name": "USE_ADDR_CODES",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SYSTEM_CURRENCY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SYSTEM_CURRENCY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MULTI_CLNT_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MULTI_CLNT_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MULTI_VEND_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MULTI_VEND_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MULTI_PERS_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MULTI_PERS_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PARENT_CHILD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARENT_CHILD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AUTO_GEN_CHILD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AUTO_GEN_CHILD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CHILD_MAT_SEP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CHILD_MAT_SEP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LEN_CHILD_SUFF",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "LEN_CHILD_SUFF",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_MODIFIED",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_MODIFIED",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LANGUAGE_CODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LANGUAGE_CODE",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SqlServerTable2",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-27.uksouth.logic.azure.com:443/workflows/d47bd2381fff42c1b40ec0342d1f1fae/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7bk3ZY_vzmrBg49be8UaJP-JrwAOj-j9jlacVNoHedc",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					}
+				}
+			}
+		],
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
